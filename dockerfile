@@ -3,4 +3,5 @@ WORKDIR /app
 COPY ./ /app
 RUN npm install
 COPY ssh/ /root/.ssh/
+RUN chmod 600 /root/.ssh/github.com
 
