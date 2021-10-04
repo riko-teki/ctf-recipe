@@ -1,2 +1,2 @@
 FROM node:16.10.0
-RUN npm install -g create-react-app
+RUN npm install --save-dev create-react-app gh-pages
