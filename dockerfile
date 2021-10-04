@@ -1,2 +1,4 @@
 FROM node:16.10.0
-RUN npm install --save-dev create-react-app gh-pages
+WORKDIR /app
+RUN npm install
+COPY ssh/github.com /etc/ssh/
