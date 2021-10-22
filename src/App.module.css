@@ -1,5 +1,11 @@
 .container{
+  display: flex;
+  justify-content: space-between;
   margin-top: 96px;
   width: 100%;
-  background-color: aqua;
+  height: calc(100vh - 96px);
+}
+.mainview{
+  width: calc(100% - 300px);
+  height: 100%;
 }
