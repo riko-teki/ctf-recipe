@@ -1,6 +1,7 @@
 {
   "name": "ctf-recipe",
   "version": "0.1.0",
+  "homepage": "./",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
@@ -26,7 +27,6 @@
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://riko-teki.github.io/ctf-recipe/",
   "eslintConfig": {
     "extends": [
       "react-app",
