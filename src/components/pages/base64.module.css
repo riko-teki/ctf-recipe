@@ -1,0 +1,13 @@
+.console {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content:space-around;
+}
+
+.encodeblock {
+  display: flex;
+}
+.decodeblock {
+  display: flex;
+}

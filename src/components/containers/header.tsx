@@ -14,7 +14,7 @@ export default function Header() {
           <span> Recipe</span>
         </h1>
       </a>
-      <p>fool's CTF Recipe</p>
+      <p>I'll try to understand and output the knowledge we'll use in CTF.</p>
     </div>
   );
 }
