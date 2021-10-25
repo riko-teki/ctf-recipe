@@ -3,7 +3,7 @@ import classes from "./header.module.css";
 export default function Header() {
   return (
     <div className={classes.container}>
-      <a className={classes.title} href="/ctf-recipe/">
+      <a className={classes.title} href="/">
         <h1>
           <span className="nes-text is-primary">C</span>
           <span className={classes.hidden}>apture</span>
