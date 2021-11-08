@@ -26,7 +26,7 @@ jobs:
       - name: Build
         run: npm run build  # React ビルド
 
-      - name: Deploy  # デプロイ 
+      - name: Disk Attach 
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -35,5 +35,6 @@ jobs:
           --disk-name System_Disk \
           --disk-path /dev/sda1 \
           --instance-name Ubuntu-1
+      - name: Deploy
         run:
           ls -la
