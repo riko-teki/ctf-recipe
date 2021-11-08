@@ -31,4 +31,9 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run:
-          aws lightsail cp --recursive --region ap-northeast-1 build lightsail://Ubuntu-1
+          aws lightsail attach-disk \
+          --disk-name System_Disk \
+          --disk-path /dev/sda1 \
+          --instance-name Ubuntu-1
+        run:
+          ls -la
