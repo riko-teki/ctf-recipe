@@ -6,6 +6,6 @@ services:
     volumes:
       - ./:/app
     ports:
-      - 11111:80
+      - 11111:80 # port
     working_dir: /app
-    tty: true
+    tty: true 
