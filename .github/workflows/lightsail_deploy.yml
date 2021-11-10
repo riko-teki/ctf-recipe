@@ -63,5 +63,5 @@ jobs:
       - name: Deploy Container
         run: |
           service_name=ctf-recipe
-          aws lightsail get-container-images --service-name ${service_name} | jq --raw-output ".containerImages[0].image" | echo
+          aws lightsail get-container-images --service-name ${service_name} | jq --raw-output ".containerImages[0].image"
       
