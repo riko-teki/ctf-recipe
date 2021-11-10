@@ -1,25 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import classes from "./App.module.css";
+import { Route, Switch } from "react-router-dom";
+
+import Home from "./components/pages/home";
+import NotFound from "./components/pages/404";
+import Header from "./components/containers/header";
+import SideMenu from "./components/containers/sidemenu";
+import Base64 from "./components/pages/base64";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header></Header>
+      <div className={classes.container}>
+        <div className={classes.mainview}>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/base64" component={Base64}/>
+            <Route component={NotFound} />
+          </Switch>
+        </div>
+        <SideMenu></SideMenu>
+      </div>
+    </>
   );
 }
 

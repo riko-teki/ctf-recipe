@@ -1,2 +1,7 @@
 FROM node:16.10.0
-RUN npm install -g create-react-app
+WORKDIR /app
+COPY ./ /app
+RUN npm install
+COPY ssh/ /root/.ssh/
+RUN chmod 600 /root/.ssh/github.com
+

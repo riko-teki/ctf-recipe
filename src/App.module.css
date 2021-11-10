@@ -1,0 +1,12 @@
+.container{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 96px;
+  width: 100%;
+  height: calc(100vh - 96px);
+}
+.mainview{
+  width: calc(100% - 350px);
+  /* height: 100%; */
+  margin: 8px;
+}
