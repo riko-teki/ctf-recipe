@@ -63,13 +63,9 @@ jobs:
       - name: Deploy Container
         run: |
           service_name=ctf-recipe
-          aws lightsail create-container-service-deployment --generate-cli-skeleton > container.json
-          echo $(cat container.json)
+          echo $(cat continer.json)
           image=$(aws lightsail get-container-images --service-name ${service_name} | jq --raw-output ".containerImages[0].image")
-          echo $image
           cat container.json | jq --arg image $image '.containers.KeyName.image|=$image' > container.json
-          echo $(cat container.json | jq --arg image $image '.containers.KeyName.image|=$image')
-          echo $(pwd)
 
 
       
