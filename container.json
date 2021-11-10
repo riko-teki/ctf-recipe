@@ -1,26 +1,22 @@
 {
-  "containers": {
-    "ctf-recipe": {
-      "image": "",
-      "environment": {
-        "APP_ENV": "release",
-        "NODE_ENV": "production"
-      },
-      "ports": {
-        "443": "HTTPS"
-      }
-    }
-  },
-  "publicEndpoint": {
-    "containerName": "ctf-recipe",
-    "containerPort": 443,
-    "healthCheck": {
-      "healthyThreshold": 2,
-      "unhealthyThreshold": 2,
-      "timeoutSeconds": 5,
-      "intervalSeconds": 10,
-      "path": "/",
-      "successCodes": "200-499"
-    }
-  }
+   "containers": {
+       "api": {
+         "image": "", 
+         "ports": {
+             "80": "HTTP"
+         }
+       }
+   },
+   "publicEndpoint": {
+       "containerName": "api",
+       "containerPort": 80,
+       "healthCheck": {
+          "healthyThreshold": 2,
+          "unhealthyThreshold": 2,
+          "timeoutSeconds": 3,
+          "intervalSeconds": 5,
+          "path": "/",
+          "successCodes": "200-499"
+       }
+   }
 }
