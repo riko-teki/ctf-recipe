@@ -44,8 +44,9 @@ jobs:
 
       - name: push and Deploy
         run: |
+          service_name=container-service-1
           aws lightsail push-container-image \
             --region ap-northeast-1 \
-            --service-name Ubuntu-1 \
+            --service-name ${service_name} \
             --label web \
             --image ctf-recipe:latest
