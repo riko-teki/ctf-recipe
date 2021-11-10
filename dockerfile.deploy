@@ -1,4 +1,4 @@
 FROM nginx:latest
-COPY ./build/ /usr/local/var/www/
+COPY ./build/ /var/www/html
 EXPOSE 80 443
 
