@@ -48,7 +48,7 @@ jobs:
         run: |
           docker build -t ctf-recipe:latest -f dockerfile.deploy .
 
-      - name: push and Deploy
+      - name: Push image
         run: |
           service_name=ctf-recipe
           aws lightsail push-container-image \
@@ -56,3 +56,11 @@ jobs:
             --service-name ${service_name} \
             --label web \
             --image ctf-recipe:latest
+      
+      - name: Install utility for JSON
+        run: sudo apt-get install -y jq
+      
+      - name: Deploy Container
+        run: |
+          aws lightsail get-container-images --service-name ${service_name} | jq --raw-out -output ".containerImages[0].image" | echo
+      
