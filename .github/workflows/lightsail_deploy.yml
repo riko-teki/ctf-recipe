@@ -66,7 +66,8 @@ jobs:
           aws lightsail create-container-service-deployment --generate-cli-skeleton > container.json
           image=$(aws lightsail get-container-images --service-name ${service_name} | jq --raw-output ".containerImages[0].image")
           cat container.json | jq --arg image $image '.containers.KeyName.image|=$image' > container.json
-          json=$(cat $(pwd)/container.json)
-          aws lightsail create-container-service-deployment --service-name ${service_name} --cli-input-json ${json}
+          aws lightsail create-container-service-deployment \
+            --service-name ${service_name} \
+            --cli-input-json $(cat container.json | jq --arg image $image '.containers.KeyName.image|=$image')
 
       
