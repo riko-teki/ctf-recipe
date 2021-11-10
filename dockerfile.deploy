@@ -1,5 +1,5 @@
 FROM nginx:latest
 COPY ./build /usr/share/nginx/html
-COPY ./container.json ./
+COPY ./container.json /home/runner/work/ctf-recipe/ctf-recipe
 EXPOSE 80 443
 
