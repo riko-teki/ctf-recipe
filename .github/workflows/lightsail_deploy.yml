@@ -50,7 +50,7 @@ jobs:
 
       - name: push and Deploy
         run: |
-          service_name=container-service-1
+          service_name=ctf-recipe
           aws lightsail push-container-image \
             --region ap-northeast-1 \
             --service-name ${service_name} \
