@@ -2,11 +2,6 @@
     "containers": {
         "ctf-recipe": {
             "image": "",
-            "command": [
-                ""
-            ],
-            "environment": {
-            },
             "ports": {
                 "80": "HTTPS"
             }
