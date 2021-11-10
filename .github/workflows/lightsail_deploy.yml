@@ -65,6 +65,7 @@ jobs:
           service_name=ctf-recipe
           aws lightsail get-container-images --service-name ${service_name} | jq --raw-output ".containerImages[0].image" > image.txt
           image=$(cat image.txt)
+          echo $image
           jq --arg image $image '.containers.api.image = $image' container.json > container.json
           echo $(cat container.json)
           aws lightsail create-container-service-deployment --service-name ${service_name} --cli-input-json file://$(pwd)/container.json
