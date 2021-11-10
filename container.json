@@ -3,13 +3,13 @@
         "ctf-recipe": {
             "image": "",
             "ports": {
-                "80": "HTTPS"
+                "443": "HTTPS"
             }
         }
     },
     "publicEndpoint": {
         "containerName": "ctf-recipe",
-        "containerPort": 80,
+        "containerPort": 443,
         "healthCheck": {
             "healthyThreshold": 2,
             "unhealthyThreshold": 2,
